@@ -12,7 +12,7 @@
     "command": "npx",
     "args": [
       "-y",
-      "https://github.com/TheBananaStand/leo-transcript-mcp/archive/0000000000000000000000000000000000000000.tar.gz"
+      "https://github.com/TheBananaStand/leo-transcript-mcp/archive/ab1ed9832c67e213bf4c1f099bbbdfc9f117a3d2.tar.gz"
     ]
   },
   "descriptor": {
