@@ -1,0 +1,60 @@
+{
+  "name": "transcript-mcp",
+  "label": "Transcript",
+  "description": "Timestamped transcripts of YouTube and TikTok videos, installed at runtime — no rebuild.",
+  "icon": "closed-captioning",
+  "version": "1.0.0",
+  "author": "TheBananaStand",
+  "homepage": "https://github.com/TheBananaStand/leo-transcript-mcp",
+  "category": "package",
+  "mcp": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "https://github.com/TheBananaStand/leo-transcript-mcp/archive/0000000000000000000000000000000000000000.tar.gz"
+    ]
+  },
+  "descriptor": {
+    "fields": [
+      {
+        "key": "yt_dlp_path",
+        "label": "yt-dlp path (optional)",
+        "field_type": "text",
+        "required": false
+      },
+      {
+        "key": "whisper_path",
+        "label": "whisper-ctranslate2 path (optional)",
+        "field_type": "text",
+        "required": false
+      }
+    ],
+    "entitlements": {
+      "settings_read": [
+        "yt_dlp_path",
+        "whisper_path"
+      ],
+      "network": [
+        "youtube.com",
+        "tiktok.com"
+      ],
+      "sends": [
+        {
+          "to": "youtube.com",
+          "classes": [
+            "prompts"
+          ],
+          "purpose": "The video URL, and nothing else. Fetching the page and its caption track is an ordinary anonymous request — no account, no conversation, no file contents are attached to it."
+        },
+        {
+          "to": "tiktok.com",
+          "classes": [
+            "prompts"
+          ],
+          "purpose": "The video URL, and nothing else — the same anonymous fetch as YouTube."
+        }
+      ]
+    }
+  }
+}

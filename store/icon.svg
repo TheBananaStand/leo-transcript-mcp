@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#0D6E68"/>
+    </linearGradient>
+    <!-- The caption bars are cut OUT of the bubble so they show the tile gradient
+         through, rather than being painted a flat colour that only approximates it. -->
+    <mask id="bubble">
+      <rect width="512" height="512" fill="black"/>
+      <path fill="white" d="M152 120h208a56 56 0 0 1 56 56v128a56 56 0 0 1-56 56H236l-72 60a10 10 0 0 1-16-8v-52h-4a56 56 0 0 1-56-56V176a56 56 0 0 1 56-56z"/>
+      <rect x="152" y="184" width="208" height="30" rx="15" fill="black"/>
+      <rect x="152" y="244" width="136" height="30" rx="15" fill="black"/>
+    </mask>
+  </defs>
+  <rect width="512" height="512" rx="114" fill="url(#tile)"/>
+  <rect width="512" height="512" mask="url(#bubble)" fill="#FFFFFF"/>
+</svg>
